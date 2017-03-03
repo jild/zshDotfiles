@@ -27,10 +27,9 @@ cd - # return to original dir after submodule load (see cd above)
 
 # Antigen
 antigen use oh-my-zsh
-antigen theme jdavis/zsh-files themes/jdavis
+# antigen theme jdavis/zsh-files themes/jdavis
 # problem antigen theme forces me to press enter to see prompt
-# antigen theme bira # pure is nice too
-# antigen theme pure
+antigen theme bira
 antigen bundle colorize #cat syn highlighting (funzt nicht?)
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle vi-mode
@@ -38,6 +37,11 @@ antigen bundle tarruda/zsh-autosuggestions
 antigen bundle junegunn/fzf.git
 # the next line is now in plugins=(... fzf-zsh ...)
 antigen bundle Treri/fzf-zsh # used to make fzf work with zsh autosuggestions
+antigen bundle z
+antigen bundle autojump # doesnt work?
+antigen bundle colored-man-pages
+# antigen bundle https://github.com/clvv/fasd fasd
+antigen bundle clvv/fasd fasd
 # plugin made unnecessary:
 # use fuzzy file finder with <ctrl>-T/R or <alt>-C
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -89,7 +93,7 @@ if [ "$TMUX" = "" ]; then tmux; fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, compleat, z)
+# plugins=(autojump, git, compleat, z, colored-man-pages, colorize, command-not-found)
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
