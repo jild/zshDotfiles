@@ -1,9 +1,6 @@
 # zshDotfiles github directory
-zshDotfilePath=~/gitTest/zshDotfiles
-
+zshDotfilePath=/media/jakob/data/dotfiles/zshDotfiles/
 cd $zshDotfilePath
-
-# pwd
 
 # relevant git submodule load
 ## Load  z  for  fast  access  of  recent  folders
@@ -31,6 +28,8 @@ antigen use oh-my-zsh
 # problem antigen theme forces me to press enter to see prompt
 antigen theme bira
 antigen bundle colorize #cat syn highlighting (funzt nicht?)
+antigen bundle indero/pygmentize-zsh # syntax highlighting for cat, less, diff
+antigen-bundle Tarrasch/zsh-colors # not rlly useful, 'red hi' will print red colored hi
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle vi-mode
 antigen bundle tarruda/zsh-autosuggestions
@@ -40,6 +39,7 @@ antigen bundle Treri/fzf-zsh # used to make fzf work with zsh autosuggestions
 antigen bundle z
 antigen bundle autojump # doesnt work?
 antigen bundle colored-man-pages
+antigen bundle jira
 # antigen bundle https://github.com/clvv/fasd fasd
 antigen bundle clvv/fasd fasd
 # plugin made unnecessary:
@@ -101,6 +101,7 @@ if [ "$TMUX" = "" ]; then tmux; fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias c="pygmentize -g" # doesnt work
 alias zshconfig="nvim ~/.zshrc"
 alias up="cd .."
 alias cl="clear"

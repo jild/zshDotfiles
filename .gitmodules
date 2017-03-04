@@ -4,12 +4,12 @@
 [submodule "z"]
 	path = z
 	url = https://github.com/rupa/z
-[submodule "antigen"]
-	path = antigen
-	url = https://github.com/zsh-users/antigen.git
 [submodule "tmux"]
 	path = tmux
 	url = https://github.com/tmux/tmux.git
 [submodule "compleat"]
 	path = compleat
 	url = https://github.com/mbrubeck/compleat.git
+[submodule "antigen"]
+	path = antigen
+	url = https://github.com/zsh-users/antigen.git
