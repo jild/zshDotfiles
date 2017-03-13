@@ -1,6 +1,6 @@
 # muss oberste Zeile sein, da PATH hier überschrieben wird
 # wenn andere die nun erweitern wollen, muss das danach geschehen
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/texlive/2016/bin/x86_64-linux"
 
 # Plattformen für mobile Systeme
 # source /home/jakob/public/mobile-project/mobile-project-shell-config-cochlovius.zsh
@@ -10,9 +10,11 @@ export github_user=jjjeykey # used for dotfiles deployment github app
 export PATH=$PATH:"$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+export VISUAL="vi"
+export EDITOR="vi"
 
 # zshDotfiles github directory
-zshDotfilePath=/media/jakob/data/dotfiles/zshDotfiles/
+zshDotfilePath=/home/mm/mygit/zshDotfiles
 cd $zshDotfilePath
 
 # relevant git submodule load
@@ -41,11 +43,15 @@ antigen bundle colorize #cat syn highlighting (funzt nicht?)
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle vi-mode
 antigen bundle tarruda/zsh-autosuggestions
-antigen bundle junegunn/fzf.git
-antigen bundle Treri/fzf-zsh # used to make fzf work with zsh autosuggestions
+# antigen bundle junegunn/fzf.git
+# antigen bundle Treri/fzf-zsh # used to make fzf work with zsh autosuggestions
 antigen bundle z
 antigen bundle colored-man-pages
 antigen bundle jira
+# antigen bundle extract
+antigen bundle Pitometsu/zsh-github # copy of oh-my-zsh, hub is the shortcut command \
+  # needs hub installed (and ruby?)
+#Todo: jira plus, github plugin
 
 #DISABLE SCROLL LOCK, does not work?
 #(http://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator)
