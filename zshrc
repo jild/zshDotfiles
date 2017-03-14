@@ -1,6 +1,15 @@
 # muss oberste Zeile sein, da PATH hier überschrieben wird
 # wenn andere die nun erweitern wollen, muss das danach geschehen
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/texlive/2016/bin/x86_64-linux"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+
+# latex distribution
+# make sure to uninstall all texlive distributions installed with package
+# manager. Test if correct path is set with 'kpsewhich latex.ltx'
+export PATH=/usr/local/texlive/2016/bin/`uname -i`-linux:$PATH
+export MANPATH=/usr/local/texlive/2016/texmf/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2016/texmf/doc/info:$INFOPATH
+unset TEXINPUTS
+unset TEXMFCONFIG
 
 # Plattformen für mobile Systeme
 # source /home/jakob/public/mobile-project/mobile-project-shell-config-cochlovius.zsh
