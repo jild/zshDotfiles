@@ -5,9 +5,11 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # latex distribution
 # make sure to uninstall all texlive distributions installed with package
 # manager. Test if correct path is set with 'kpsewhich latex.ltx'
-export PATH=/usr/local/texlive/2016/bin/`uname -i`-linux:$PATH
-export MANPATH=/usr/local/texlive/2016/texmf/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/2016/texmf/doc/info:$INFOPATH
+# kpsewhich is in texlive path/bin
+# check the following paths for correctness
+export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
 unset TEXINPUTS
 unset TEXMFCONFIG
 
@@ -118,6 +120,8 @@ choose () {
         ${EDITOR:-vi} "$opt"
     done
   }
+
+# Todo: quickly open directory of file
 
 bindkey '^f' vi-end-of-line # for the suggestions
 
