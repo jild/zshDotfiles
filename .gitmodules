@@ -16,3 +16,6 @@
 [submodule "hub"]
 	path = hub
 	url = https://github.com/github/hub.git
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/powerline/fonts.git
