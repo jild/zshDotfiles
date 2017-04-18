@@ -54,8 +54,8 @@ antigen bundle colorize #cat syn highlighting (funzt nicht?)
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle vi-mode
 antigen bundle tarruda/zsh-autosuggestions
-# antigen bundle junegunn/fzf.git
-# antigen bundle Treri/fzf-zsh # used to make fzf work with zsh autosuggestions
+antigen bundle junegunn/fzf.git
+antigen bundle Treri/fzf-zsh # used to make fzf work with zsh autosuggestions
 antigen bundle z
 antigen bundle colored-man-pages
 antigen bundle jira
@@ -82,7 +82,7 @@ zstyle ':completion:*' matcher-list '' \
 # use vi mode (access via esc)
 bindkey -v # use vi mod
 # make ctrl-r work in vi mode
-bindkey '^R' history-incremental-search-backward
+#bindkey '^R' history-incremental-search-backward
 
 export KEYTIMEOUT=1 # kills the lag, may cause probs
 
@@ -94,8 +94,24 @@ alias zshconfig="nvim ~/.zshrc"
 alias up="cd .."
 alias cl="clear"
 alias :q="exit"
+alias q="exit"
 alias e="emacs -nm"
 alias quit="exit"
+alias todo="vi ~/todo.md"
+alias skripte="okular ~/documents/skripte/* &"
+alias buildDataAgent="cd ~/build/dataAgent/ && qmake ~/documents/dataAgent/trunk/Implementation/Source/ptxproj/src/DataAgent.pro && make"
+alias buildDataAgentUnitTestsAndRun="cd ~/build/dataAgentUnitTests/ && qmake ~/documents/dataAgent/trunk/Implementation/Source/ptxproj/tests/unit/DataAgent_UnitTests.pro && make && ./unittests"
+alias copyImplementationToUbuntu="rsync -avpPh --delete -e ssh ~/documents/dataAgent/trunk/Implementation/ ubuntu0815:~/documents/workspace/dataAgent"
+alias fzf="[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh"
+alias buildmodul="cd ~/programme/azure-iot-gateway-sdk/azure-iot-gateway-sdk/tools && ./build.sh && cd ../build"
+alias runmodul="cd ~/programme/azure-iot-gateway-sdk/azure-iot-gateway-sdk/build && ./samples/smallHello2/smallHello_sample2 ../samples/smallHello2/src/smallHello2.json"
+alias gdbmodul="cd ~/programme/azure-iot-gateway-sdk/azure-iot-gateway-sdk/build && gdb ./samples/smallHello2/smallHello_sample2"
+
+Runmodul() {
+  #cd ~/programme/azure-iot-gateway-sdk/azure-iot-gateway-sdk/tools && ./build.sh && cd ../build;
+  echo "cd ~/programme/azure-iot-gateway-sdk/azure-iot-gateway-sdk/build && ./samples/$1/${1/Hello/Hello_sample} ../samples/$1/src/$1.json;"
+  cd ~/programme/azure-iot-gateway-sdk/azure-iot-gateway-sdk/build && ./samples/$1/${1/Hello/Hello_sample} ../samples/$1/src/$1.json
+}
 
 # Aliases for xclip:
 # http://stackoverflow.com/questions/5130968/how-can-i-copy-the-output-of-a-command-directly-into-my-clipboard
@@ -123,5 +139,8 @@ choose () {
 
 # Todo: quickly open directory of file
 
-bindkey '^f' vi-end-of-line # for the suggestions
+bindkey '^ ' vi-end-of-line  # for the suggestions
+bindkey '^f' vi-forward-word # for the suggestions
+#bindkey '^r' fzf
+
 
