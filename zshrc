@@ -1,3 +1,7 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 # muss oberste Zeile sein, da PATH hier überschrieben wird
 # wenn andere die nun erweitern wollen, muss das danach geschehen
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
@@ -25,7 +29,7 @@ export VISUAL="vi"
 export EDITOR="vi"
 
 # zshDotfiles github directory
-zshDotfilePath=/home/mm/mygit/zshDotfiles
+zshDotfilePath=~/mygit/zshDotfiles
 cd $zshDotfilePath
 
 # relevant git submodule load

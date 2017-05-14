@@ -1,0 +1,2 @@
+install powerline fonts
+ und in KDE: set locales Variablen, alle vorallem LC_CTYPE 
